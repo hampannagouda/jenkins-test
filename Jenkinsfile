@@ -47,4 +47,22 @@ pipeline {
 
                     robocopy . "%DEPLOY_DIR%" /MIR /XD .git /XF Jenkinsfile
 
-                    if %ERRORLEVEL% GEQ 
+                    if %ERRORLEVEL% GEQ 8 exit /b 1
+
+                    exit /b 0
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Deployment successful!"
+            echo "Website deployed to: ${env.DEPLOY_DIR}"
+        }
+
+        failure {
+            echo 'Deployment failed. Check the Jenkins console logs.'
+        }
+    }
+}
