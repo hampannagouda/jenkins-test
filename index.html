@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f7fb; color: #222; }
+    .container { max-width: 800px; margin: 80px auto; padding: 40px; background: white; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.08); text-align: center; }
+    h1 { color: #2563eb; }
+    button { background: #2563eb; color: white; border: 0; padding: 12px 20px; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to My Website</h1>
+    <p>This is a simple HTML page with HTML, CSS, and JavaScript.</p>
+    <button onclick="showMessage()">Click Me</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').textContent = 'Hello! Your HTML page is working successfully.';
+    }
+  </script>
+</body>
+</html>
